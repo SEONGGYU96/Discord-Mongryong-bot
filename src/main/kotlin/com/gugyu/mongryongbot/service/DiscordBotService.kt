@@ -32,9 +32,9 @@ class DiscordBotService(
 
         discordClient.eventDispatcher.on(MessageCreateEvent::class.java)
                 .subscribe{
-                    val content = it.message.content
+                    val content = it.message.content.trim()
                     for(entry in Commands.commands.entries) {
-                        if(content.startsWith(entry.key) || content == entry.key) {
+                        if(content == entry.key) {
                             entry.value.execute(it)
                             break
                         }
