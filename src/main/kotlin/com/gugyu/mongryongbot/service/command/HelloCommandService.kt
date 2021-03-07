@@ -12,7 +12,7 @@ class HelloCommandService : Command {
 
     @PostConstruct
     fun init() {
-        val command = "!안녕"
+        val command = "몽룡아 안녕"
         Commands.commands[command] = this
     }
 
